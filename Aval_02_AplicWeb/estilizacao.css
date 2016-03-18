@@ -1,0 +1,23 @@
+#enviar{
+	position: absolute;
+	left: 315px;
+	margin: 10px;
+	
+	}	
+#limpar{
+	position: absolute;
+	left: 110px;
+	margin:-10px;
+	}
+#nome{
+	position: relative;
+	left: 128px;
+	}
+#data{
+	position: relative;
+	left: 0px;
+	}
+#email{
+	position: relative;
+	left: 124px;
+	}

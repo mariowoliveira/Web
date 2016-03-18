@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<title>Trabalho em Sala</title>
+		<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estilizacao.css" media="all">
+	<script type ="text/javascript" src="jquery-2.1.1.min.js"> </script>
+	<script type ="text/javascript" src="jquery.maskedinput.js"> </script>
+	<script type ="text/javascript" src="implementacao.js"> </script>
+	</head>
+	<body>
+		<div class="cabecalho">
+			<h1> Formulário de Inscrição</h1>
+			<hr>
+		</div>
+		<div class="formulario">
+			<form>
+				<label for="nome"><b>Nome: </b></label>
+				<input type="text" name="nome" id="nome"/><br><p id="verif1"></p>
+				<label for="datanascimento"><b>Data de Nascimento: </b></label>
+				<input type="text" name="datanascimento" id="data"/><br><p id="verif2"></p>
+				<label for="email"><b>E-mail: </b></label>
+				<input type="text" name="email" id="email"/><br><p id="verif3"></p>
+
+				<input type="button" name="enviar" value="Enviar" id="enviar" onclick="verificaEmail()" onclick="verificaNome()" onclick="verificaData"><br>
+				<input type="button" name="limpar" value="Limpar" id="limpar"><br>
+			</form>
+	</body>
+	</html>
