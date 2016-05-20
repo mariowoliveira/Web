@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Envio de dados</title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="jquery.maskedinput.js"></script>
+	</head>
+	<body>
+		<form method="post" name="formCadastro" action="cadCliente.php">
+			<h1>Cadastro de Cliente</h1>
+			<table width="100%">
+				<tr>
+					<th width="18%"> Nome </th>
+					<td width="82%"><input type="text" name="txtNome"></td>
+				</tr>
+				<tr>
+					<th> CPF </th>
+					<td><input id="cpf" type="text" name="txtCPF" maxlenght="14"></td>
+					<script>
+		            	$("#cpf").mask("999.999.999-99");
+		        	</script>
+				</tr>
+				<tr>
+					<th> Endereço </th>
+					<td><textarea name="txtEndereco" cols="30" rows="4"></textarea></td>
+				</tr>
+				<tr>
+					<th> Estado </th>
+					<td><select name="listEstados">
+							<option value="">Selecione</option>
+							<option value="AC">Acre</option>
+							<option value="AM">Amazonas</option>
+							<option value="AL">Alagoas</option>
+							<option value="AP">Amapá</option>
+							<option value="BA">Bahia</option>
+							<option value="CE">Ceará</option>
+							<option value="DF">Distrito Federal</option>
+							<option value="ES">Espirito Santo</option>
+							<option value="GO">Goiás</option>
+							<option value="MA">Maranhão</option>
+							<option value="MT">Mato Grosso</option>
+							<option value="MS">Mato Grosso do Sul</option>
+							<option value="MG">Minas Gerais</option>
+							<option value="PA">Pará</option>
+							<option value="PB">Paraíba</option>
+							<option value="PR">Paraná</option>
+							<option value="PE">Pernanbuco</option>
+							<option value="PI">Piauí</option>
+							<option value="RJ">Rio de Janeiro</option>
+							<option value="RN">Rio Grande do Norte</option>
+							<option value="RS">Rio Grande do Sul</option>
+							<option value="RO">Rondônia</option>
+							<option value="RR">Roraima</option>
+							<option value="SC">Santa Catarina</option>
+							<option value="SP">São Paulo</option>
+							<option value="SE">Sergipe</option>
+							<option value="TO">Tocantins</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th> Data de Nascimento </th>
+					<td><input id="data" type="text" name="txtData"></td>
+                    <script>
+		            	$("#data").mask("99/99/9999");
+		        	</script>
+				</tr>
+				<tr>
+					<th> Sexo </th>
+					<td><input type="radio" name="sexo" value="M" checked>Masculino<br>
+						<input type="radio" name="sexo" value="F" />Feminino
+					</td>
+				</tr>
+				<tr>
+					<th> Áreas de Interesse </th>
+					<td><input type="checkbox" name="checkCinema" value="true">Cinema<br>
+						<input type="checkbox" name="checkMusica" value="true" />Música<br>
+						<input type="checkbox" name="checkInfo" value="true" />Informática
+					</td>
+				</tr>
+				<tr>
+					<th> Login </th>
+					<td><input type="text" name="txtLogin">
+					</td>
+				</tr>
+				<tr>
+					<th> Senha </th>
+					<td><input type="password" name="txtSenha1"></td>
+				</tr>
+					<th> Confirmação de Senha </th>
+					<td><input type="password" name="txtSenha2"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" name="btnEnviar" value="Enviar">
+						<input type="reset" name="btnLimpar" value="Limpar"></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
