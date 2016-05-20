@@ -83,45 +83,26 @@
          if(!validaCPF($cpf)){
 			 echo"CPF INVÁLIDO<br>";
 			 $camposOK=false; 
-		 }
-		function verificaData(){
-	      $data = (explode("/", $dtNasc));
-	       $dia= $data[0];
-	       $mes= $data[1];
-	       $ano= $data[2];
-	       $bool=true;
-        if (($ano>=1500) || ($ano<2017){
-			if (($mes>=1) || ($mes<=12)){
-				if (($mes==01)||($mes==03)||($mes==05)||($mes==07)||($mes==8)||($mes==10)||($mes==12)){
-					if (($dia>=01) && ($dia<=31)){
-						$bool=true;
-					}
-			}else if (($mes==04)||($mes==06)||($mes== 9)||($mes==11)){
-					if (($dia>=01) && ($dia<=30)){
-						$bool=true;
-					}
-			}else if ($mes==02){
-				if (($ano%4==0) && ($ano%100!=0)) || (($ano%4==0) && ($ano%100==0) && ($ano%400==0)){
-					if (($dia>=1) && ($dia<=29)){
-						$bool=true;
-					}
-				}else{ 
-                    if(($dia>=01) && ($dia<=28)){
-                        $bool=true;
-                        }
-                    }
-                }
-			}
-    }else{
-        $bool=true;
-    }
-
-}
-    if(!verificaData()){
-		echo"Data incorreta";
-		$camposOK=false;
+	 }
+	if($dtNasc == ""){
+		$verificaData = false;
 	}
-
+		if(($mesNasc < 1) ||($mesNasc > 12)){
+			$verificaData = false;
+		}else if(($diaNasc < 1) || ($diaNasc > 31)){
+			$verificaData = false;
+		}else if(($mesNasc == 4) || ($mesNasc == 6) || ($mesNasc == 9) || ($mesNasc == 11) && ($diaNasc == 31)){
+			$verificaData = false;
+		}else if($mesNasc == 2){
+		}
+		
+		$isleap = (($anoNasc % 4 == 0) && ($anoNasc % 100 != 0) || ($anoNasc % 400 == 0));
+		if(($diaNasc > 29) || ($diaNasc == 29) && ($isleap == false)){
+			$verificaData = false;
+		}	
+			if($verificaData == false){
+				echo "<b>Data Inválida</b>";
+			}
 			
 			if ($camposOK){
 				echo "<table border='0' cellpadding='5'>";
