@@ -8,6 +8,7 @@
 		<?php
 			echo "<h1>Os dados informados são:</h1>";
 			$nome = $_POST["txtNome"];
+			$arquivo = $_FILES["txtFoto"];
 			$ender= $_POST["txtEndereco"];
 			$cpf= $_POST["txtCPF"];
 			$estado= $_POST["listEstados"];
@@ -16,26 +17,47 @@
 			$mesNasc = substr("$dtNasc",3,-5);
 			$anoNasc = substr("$dtNasc",6);
 			$sexo= $_POST["sexo"];
-			$cinema= $_POST["checkCinema"];
-			$musica= $_POST["checkMusica"];
-			$info= $_POST["checkInfo"];
 			$login= $_POST["txtLogin"];
 			$senha1= $_POST["txtSenha1"];
 			$senha2= $_POST["txtSenha2"];
 			$verificaData = true;			
 			$camposOK= true;
+		//condição do envio do arquivo
+			if(($arquivo['error']!=0) || ($arquivo['size'] == 0)){
+				echo "Erro no envio do arquivo <br>";
+				$camposOK = false;
+			}
+			if($arquivo['size'] > 100000){
+				echo "Tamanho maior que o permitido";
+				$camposOK= false;
+			}
+			if(($arquivo['type'] != "image/gif")&&
+				($arquivo['type'] != "image/png")&&
+				($arquivo['type'] != "image/jpg")&&
+				($arquivo['type'] != "image/jpeg")&&
+				($arquivo['type'] != "image/bmp")){
+					
+				echo "Tipo de arquivo não permitido";
+				$camposOK= false;
+			}
+			$file_src = '../../tmp/'.$_FILES['txtFoto']['name'];
+			if(!move_uploaded_file($_FILES['txtFoto']['tmp_name'],$file_src)){
+				echo"Erro ao mover o arquivo<br>";
+				$camposOK= false;
+			}
 			
-			if(isset($POST["checkCinema"])){
+		//verifica as opções
+			if(isset($_POST["checkCinema"])){
 				$cinema=true;
 			}else{
 				$cinema=false;
 			}
-			if(isset($POST["checkMusica"])){
+			if(isset($_POST["checkMusica"])){
 				$musica=true;
 			}else{
 				$musica=false;
 			}
-			if(isset($POST["checkInfo"])){
+			if(isset($_POST["checkInfo"])){
 				$info=true;
 			}else{
 				$info=false;
@@ -123,6 +145,7 @@
 			
 			if ($camposOK){
 				echo "<table border='0' cellpadding='5'>";
+				echo "<tr><td><img height='120' width='120' src='$file_src'></td></tr>";
 				echo "<tr><td>NOME: </td><td><b>$nome</b></td></tr>";
 				echo "<tr><td>CPF: </td><td><b>$cpf</b></td></tr>";
 				echo "<tr><td>ENDEREÇO: </td><td><b>$ender</b></td></tr>";
