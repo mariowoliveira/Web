@@ -11,7 +11,10 @@
 			$ender= $_POST["txtEndereco"];
 			$cpf= $_POST["txtCPF"];
 			$estado= $_POST["listEstados"];
-			$dtNasc= $_POST["txtData"];
+			$dtNasc = $_POST["txtData"];
+			$diaNasc = substr("$dtNasc",0,2);
+			$mesNasc = substr("$dtNasc",3,-5);
+			$anoNasc = substr("$dtNasc",6);
 			$sexo= $_POST["sexo"];
 			$cinema= $_POST["checkCinema"];
 			$musica= $_POST["checkMusica"];
@@ -19,6 +22,8 @@
 			$login= $_POST["txtLogin"];
 			$senha1= $_POST["txtSenha1"];
 			$senha2= $_POST["txtSenha2"];
+			
+			$verificaData = true;
 			
 			$camposOK= true;
 			if ($nome == ""){
@@ -87,21 +92,22 @@
 	if($dtNasc == ""){
 		$verificaData = false;
 	}
-		if(($mesNasc < 1) ||($mesNasc > 12)){
+		if(($mesNasc < 1) || ($mesNasc > 12)){
 			$verificaData = false;
 		}else if(($diaNasc < 1) || ($diaNasc > 31)){
 			$verificaData = false;
 		}else if(($mesNasc == 4) || ($mesNasc == 6) || ($mesNasc == 9) || ($mesNasc == 11) && ($diaNasc == 31)){
 			$verificaData = false;
 		}else if($mesNasc == 2){
-		}
 		
-		$isleap = (($anoNasc % 4 == 0) && ($anoNasc % 100 != 0) || ($anoNasc % 400 == 0));
-		if(($diaNasc > 29) || ($diaNasc == 29) && ($isleap == false)){
-			$verificaData = false;
-		}	
+			$isleap = (($anoNasc % 4 == 0) && ($anoNasc % 100 != 0) || ($anoNasc % 400 == 0));
+			if(($diaNasc > 29) || ($diaNasc == 29) && ($isleap == false)){
+				$verificaData = false;
+			}
+		 }	
 			if($verificaData == false){
 				echo "<b>Data Inválida</b>";
+				$camposOK= false;
 			}
 			
 			if ($camposOK){
