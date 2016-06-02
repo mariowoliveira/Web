@@ -7,7 +7,7 @@
 		<script type="text/javascript" src="jquery.maskedinput.js"></script>
 	</head>
 	<body>
-		<form method="post" name="formCadastro" action="cadCliente.php">
+		<form method="post" name="formCadastro" action="cadCliente.php" enctype="multipart/form-data">
 			<h1>Cadastro de Cliente</h1>
 			<table width="100%">
 				<tr>
@@ -15,6 +15,10 @@
 					<td width="82%"><input type="text" name="txtNome"></td>
 				</tr>
 				<tr>
+				<tr>
+					<th>Foto</th>
+					<td><input type="file" name="txtFoto"></td>
+				</tr>
 					<th> CPF </th>
 					<td><input id="cpf" type="text" name="txtCPF" maxlenght="14"></td>
 					<script>
