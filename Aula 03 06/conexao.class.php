@@ -3,7 +3,7 @@
 		var $host="localhost";
 		var $user="root";
 		var $password="root";
-		var $database="CEFETMG";
+		var $database="BD-CEFETMG";
 		var $link;
 		var $query;
 		var $result;
