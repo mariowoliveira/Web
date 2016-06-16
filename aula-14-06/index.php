@@ -44,8 +44,10 @@
 				<td><?php echo $aluno['idaluno']?>;</td>
 				<td><?php echo $aluno['nome']?>;</td>
 				<td><?php echo dateConvert($aluno ['dataNasc'])?></td>
-				<td><a href="form-edit.php?id=<?php echo $aluno['idaluno']?>">Editar</a>
-				<a href="delete.php?id=<?php echo $aluno['idaluno']?>"onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a></td>
+				<td>
+					<a href="form-edit.php?id=<?php echo $aluno['idaluno']?>">Editar</a>
+					<a href="delete.php?id=<?php echo $aluno['idaluno']?>"onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>
+				</td>
 				</tr>
 				<?php endwhile; ?>
 			</tbody>

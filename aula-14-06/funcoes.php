@@ -6,7 +6,7 @@
 	}
 	/*Converte datas entre padroes ISO e sera convertida para o padrao brasileiro*/
 	function dateConvert($date){
-		if(!stresr()$date, '/')){
+		if(!strstr($date, '/')){
 		//$date está formato ISO e sará convertida para o padrao brasileiro
 			sscanf($date, '%d-%d-%d', $y, $m, $d);
 			return sprintf('%02d/%02d/04%d', $d, $m ,$y);

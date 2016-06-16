@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
-		<title>Cadastro de dados</title>
+		<title>Envio de dados</title>
 		<meta charset="utf-8">
 		<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="jquery.maskedinput.js"></script>
