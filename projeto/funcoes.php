@@ -9,7 +9,7 @@
 		if(!strstr($date, '/')){
 		//$date está formato ISO e sará convertida para o padrao brasileiro
 			sscanf($date, '%d-%d-%d', $y, $m, $d);
-			return sprintf('%02d/%02d/04%d', $d, $m ,$y);
+			return sprintf('%02d/%02d/%04d', $d, $m ,$y);
 		}
 		else{
 		//$date está no formato brasileiro e será convertida para o sistema brasileiro

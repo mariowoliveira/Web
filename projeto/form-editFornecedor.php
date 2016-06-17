@@ -14,15 +14,15 @@
  $stmt = $PDO->prepare($sql);
  $stmt->bindParam(':id', $id, PDO::PARAM_INT);
  $stmt->execute() ;
- $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
+ $fornecedor = $stmt->fetch(PDO::FETCH_ASSOC);
  /* se o método fetch () não retornar um array
  significa que o ID não corresponde a um usuário válido */
- if(!is_array($cliente))
+ if(!is_array($fornecedor))
  {
     echo "Nenhum cliente encontrado";
     exit;
  }
- $dataOK = dateConvert($cliente['dataFundacao']);
+ $dataOK = dateConvert($fornecedor['dataFundacao']);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,11 +32,6 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="jquery.maskedinput.js"></script>
-    <script>
-        $(document).ready(function() {
-        $("#data").mask("99/99/9999");
-        });
-    </script>
 </head>
 
 <body>
@@ -46,11 +41,17 @@ multipart/form-data">
         <table width="100%">
             <tr>
                 <th width="18%">Nome do Fornecedor</th>
-                <td width="82%"><input type="text" name="txtNome" value="<?php echo $cliente['nomeFornecedor']?>"></td>
+                <td width="82%"><input type="text" name="txtNome" value="<?php echo $fornecedor['nomeFornecedor']?>"></td>
             </tr>
             <tr>
                 <th>Data de Fundação</th>
-                <td><input type="text" name="txtData" id="data" value="<?php echo $dataOK ?>"></td>
+                <td><input type="text" name="txtData" id="data" value="<?php echo $dataOK ?>">
+                    <script>
+						$(document).ready(function() {
+						$("#data").mask("99/99/9999");
+						});
+					</script>
+                </td>
             </tr>
             <tr>
                 <th>Email</th>
