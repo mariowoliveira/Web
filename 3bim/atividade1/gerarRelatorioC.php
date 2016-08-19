@@ -19,6 +19,11 @@
 	// seleciona os registros
 	$stmt=$PDO->prepare($sql);
 	$stmt->execute();
+	
+  $style = new TStyle('centra');
+  $style->position='relative';
+  $style->left='150px';
+  $style->show();
 
   // *********************************************************
   // corrigir caracteres
@@ -34,7 +39,6 @@
   $body = new TElement('body');
   $body->bgcolor = '#ffffdd';
   $html->add($body);
-
   // *********************************************************
   //instancia objeto-tabela
   $tabela = new TTable;
@@ -54,10 +58,8 @@
   $r->align = 'center';
   $s->align = 'center';
   $y->align = 'center';
-
   $i = 0;
- 
-  while($cliente = $stmt->fetch(PDO::FETCH_ASSOC))
+	while($cliente = $stmt->fetch(PDO::FETCH_ASSOC))
   {
     // verifica qual cor utilizará para o fundo
     $bgcolor = '#ffffff';
@@ -72,12 +74,8 @@
     $z->align = 'center';
     $i++;
   }
-?>	<div class="tab">
-	<?php
+  $tabela->class='centra';
   $body->add($tabela);
   $html->show();
-  ?>
- </div><?php
- 
 ?>
 </div>

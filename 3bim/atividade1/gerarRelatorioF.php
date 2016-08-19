@@ -20,6 +20,11 @@
 	$stmt=$PDO->prepare($sql);
 	$stmt->execute();
 
+  $style = new TStyle('centra');
+  $style->position='relative';
+  $style->left='150px';
+  $style->show();
+
   // *********************************************************
   // corrigir caracteres
   $html = new TElement('html');
@@ -72,13 +77,9 @@
     $z->align = 'center';
     $i++;
   }
-?>	<div class="tab">
-	<?php
+  $tabela->class='centra';
   $body->add($tabela);
   $html->show();
-  ?>
- </div><?php
- 
 ?>
 </div>
 
