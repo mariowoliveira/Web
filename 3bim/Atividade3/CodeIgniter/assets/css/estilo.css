@@ -1,0 +1,72 @@
+*{
+ 	font-family:'Roboto Condensed', sans-serif;
+ }
+ body{
+ 	background-color:#FFF;
+ 	margin:20px;
+ }
+ a{ 
+ 	color:#000;
+ 	text-decoration:none;
+ 	display:inline-block;
+ 	padding:15px;
+ 	margin :2px;
+ 	background-color:#DDD;
+ 	border-radius:6px;
+ }
+ h1,h2,h3,h4,h5,h6{
+ 	text-align:center;
+ 	border-bottom:solid 1px #BBB;
+ }
+ p{
+ 	background-color:#FFF;
+ 	padding:20px;
+ 	border-radius:6px;
+ }
+ ul{
+ 	padding:0px;
+ 	margin :0px;
+ }
+ li{
+ 	list-style:none;
+ 	width:100%;
+ 	background-color:#DDD;
+ 	border-radius:6px;
+ 	margin-bottom:4px;
+ }
+.cad{
+	position: absolute;
+	left: 300px;
+}
+#alinha{
+	margin:0px;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+input{
+	font-size: 15px;
+	line-height: 30px;
+	border-radius: 10px;
+	padding: 0px;
+	color: #000;
+	background-color: #DDD;
+	margin-bottom: 0px;
+	border: 0px;
+}
+textarea{
+	height: 40px;
+	margin-top: 0px;
+	margin-left: 0px;
+	display: 50px;
+	margin-right: 50px;
+	position: relative;
+	top: 0px;
+	border-radius: 10px;
+}
+label{
+	color: #000;
+	font-weight: 30px;
+	position: relative;
+	margin-top: 15px;
+	font-family: Arial;
+}
